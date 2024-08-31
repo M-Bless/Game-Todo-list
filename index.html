@@ -4,24 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <style>
+      body{
+        background-color: rgb(25,25,25);
+        color:white;
+        font-family:Arial;
+      }
+
+     .title{
+      font-size:30px;
+      font-weight:bold;
+
+     }
+
+     .move-icon{
+      height:50px;
+      mix-blend-mode: screen;
+      filter:invert(1);
+     }
+
+     .move-button{
+      background-color: transparent;
+      border:3px solid white;
+      border-radius: 50%;
+      margin-right: 10px;
+      padding: 15px;
+      cursor:pointer;
+
+     }
+     .result{
+      font-size:25px;
+      font-weight:bold;
+      margin-top: 50px;
+
+     }
+    
+     .score{
+      margin-top:60px;
+     }
+
+    .reset-score-button{
+      background-color: white;
+      border:none;
+      font-size: 15px;
+      padding:8px 15px;
+      cursor:pointer;
+    }
+
+
+
+
+
+    </style>
   </head>
       <body>
-        <p>Rock Paper Scissors</p>
+        <p class="title">Rock Paper Scissors</p>
         <button onclick="
-        playGame('rock');
-          ">Rock</button>
+        playGame('rock');"class="move-button">
+          <img src="images/rock-emoji.jpg" class="move-icon">
+        </button>
 
         <button onclick="
-        playGame('paper');
-       ">Paper</button>
+        playGame('paper');"class="move-button">
+        <img src="images/paper-emoji.jpg" class="move-icon">
+      </button>
 
         <button onclick="
-        playGame('scissors');
-      ">Scissors</button>
+        playGame('scissors'); "class="move-button">
+        <img src="images/scissors-emoji.jpg" class="move-icon">
+      </button>
 
-      <p class="js-result"></p>
+      <p class="js-result result"></p>
       <p class="js-moves"></p>
-      <p class="js-score"></p>
+      <p class="js-score score"></p>
         
         <p class="js-score"></p>
           <button onclick="
@@ -30,7 +85,7 @@
            score.ties=0; 
            localStorage.removeItem('score');
            updateScoreElement();
-           ">Reset Score</button>
+           " class="reset-score-button">Reset Score</button>
 
            <script>
            let score=JSON.parse(localStorage.getItem('score'))||{
@@ -105,8 +160,10 @@
       innerHTML=result;
 
       document.querySelector('.js-moves').innerHTML
-      =`You ${playerMove} -${computerMove}
-      Computer`;
+      =` You
+        <img src="images/${playerMove}-emoji.jpg" class="move-icon">
+        <img src="images/${computerMove}-emoji.jpg" class="move-icon">
+        Computer`;
 
       }
       
