@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="styles/index.css">
   </head>
       <body>
         <p class="title">Rock Paper Scissors</p>
@@ -35,6 +35,8 @@
            localStorage.removeItem('score');
            updateScoreElement();
            " class="reset-score-button">Reset Score</button>
+
+           <button class="auto-play-button" onclick="autoPlay();">Auto Play</button>
 
            <script src="scripts/index.js"></script>
       </body>
